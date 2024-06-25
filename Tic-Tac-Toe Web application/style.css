@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2b1055, #7597de);
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.mode-selection {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mode-selection label {
+  font-size: 1.2rem;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.mode-selection select {
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  appearance: none;
+  margin-top: 10px;
+}
+
+.player-turn {
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: #000;
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #555;
+  border-radius: 10px;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+  position: relative;
+  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.cell:hover {
+  background-color: #f0f0f0;
+  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.4),
+    0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.cell:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.cell.x {
+  color: #00f;
+  text-shadow: 0 0 10px #00f;
+}
+
+.cell.o {
+  color: #f00;
+  text-shadow: 0 0 10px #f00;
+}
+
+#resetButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #444;
+  color: #fff;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#resetButton:hover {
+  background-color: #555;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .game-board {
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 8px;
+  }
+
+  .cell {
+    width: 103px;
+    height: 103px;
+    font-size: 3rem;
+  }
+
+  .player-turn {
+    font-size: 1.3rem;
+  }
+
+  #resetButton {
+    padding: 8px 16px;
+    font-size: 1rem;
+  }
+
+  .mode-selection label {
+    font-size: 0.9rem;
+  }
+
+  .mode-selection select {
+    width: 177px;
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .game-board {
+    grid-template-columns: repeat(3, 114px);
+    grid-template-rows: repeat(3, 115px);
+    gap: 10px;
+  }
+
+  .cell {
+    width: 116px;
+    height: 116px;
+    font-size: 2rem;
+  }
+
+  .player-turn {
+    font-size: 1.2rem;
+  }
+
+  #resetButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  .mode-selection label {
+    font-size: 1.1rem;
+  }
+
+  .mode-selection select {
+    width: 198px;
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  .game-board {
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 12px;
+  }
+
+  .cell {
+    width: 153px;
+    height: 153px;
+    font-size: 3.5rem;
+  }
+
+  .player-turn {
+    margin-top: -10px;
+    font-size: 1.5rem;
+  }
+
+  #resetButton {
+    padding: 10px 20px;
+    font-size: 1.4rem;
+  }
+  .mode-selection label {
+    font-size: 1.5rem;
+  }
+
+  .mode-selection select {
+    width: 250px;
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .game-board {
+    grid-template-columns: repeat(3, 140px);
+    grid-template-rows: repeat(3, 140px);
+    gap: 15px;
+  }
+
+  .cell {
+    width: 149px;
+    height: 149px;
+    font-size: 4rem;
+  }
+
+  .player-turn {
+    margin-top: -6px;
+    font-size: 1.8rem;
+  }
+
+  #resetButton {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+  }
+  .mode-selection label {
+    font-size: 1.2rem;
+  }
+
+  .mode-selection select {
+    width: 276.5px;
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+}
